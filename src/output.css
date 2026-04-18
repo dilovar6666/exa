@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --font-weight-medium: 500;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -175,8 +176,20 @@
   .table {
     display: table;
   }
+  .h-\[30px\] {
+    height: 30px;
+  }
+  .h-\[400px\] {
+    height: 400px;
+  }
+  .h-\[500px\] {
+    height: 500px;
+  }
   .w-\[30px\] {
     width: 30px;
+  }
+  .w-\[95\%\] {
+    width: 95%;
   }
   .max-w-\[1300px\] {
     max-width: 1300px;
@@ -187,8 +200,17 @@
   .resize {
     resize: both;
   }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
   .justify-between {
     justify-content: space-between;
+  }
+  .justify-evenly {
+    justify-content: space-evenly;
   }
   .gap-\[8px\] {
     gap: 8px;
@@ -215,11 +237,53 @@
   .px-\[20px\] {
     padding-inline: 20px;
   }
+  .px-\[30px\] {
+    padding-inline: 30px;
+  }
   .py-\[10px\] {
     padding-block: 10px;
   }
+  .text-\[20px\] {
+    font-size: 20px;
+  }
+  .text-\[30px\] {
+    font-size: 30px;
+  }
+  .text-\[35px\] {
+    font-size: 35px;
+  }
+  .font-\[700\] {
+    --tw-font-weight: 700;
+    font-weight: 700;
+  }
+  .font-\[800\] {
+    --tw-font-weight: 800;
+    font-weight: 800;
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .text-\[\#1d2530\] {
+    color: #1d2530;
+  }
+  .text-\[\#9fa0a1\] {
+    color: #9fa0a1;
+  }
   .text-\[\#685ED6\] {
     color: #685ED6;
+  }
+  .text-\[\#685ed6\] {
+    color: #685ed6;
+  }
+  .text-\[\#b6b8ba\] {
+    color: #b6b8ba;
+  }
+  .text-\[\#cdcfd2\] {
+    color: #cdcfd2;
+  }
+  .text-\[\#dcdfe4\] {
+    color: #dcdfe4;
   }
   .text-\[white\] {
     color: white;
@@ -230,6 +294,11 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .lg\:mt-\[60px\] {
+    @media (width >= 64rem) {
+      margin-top: 60px;
+    }
   }
   .lg\:block {
     @media (width >= 64rem) {
@@ -246,9 +315,64 @@
       display: none;
     }
   }
+  .lg\:w-\[500px\] {
+    @media (width >= 64rem) {
+      width: 500px;
+    }
+  }
+  .lg\:flex-row {
+    @media (width >= 64rem) {
+      flex-direction: row;
+    }
+  }
+  .lg\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
+  .lg\:justify-evenly {
+    @media (width >= 64rem) {
+      justify-content: space-evenly;
+    }
+  }
   .lg\:p-\[30px\] {
     @media (width >= 64rem) {
       padding: 30px;
+    }
+  }
+  .lg\:px-\[60px\] {
+    @media (width >= 64rem) {
+      padding-inline: 60px;
+    }
+  }
+  .lg\:px-\[80px\] {
+    @media (width >= 64rem) {
+      padding-inline: 80px;
+    }
+  }
+  .lg\:text-\[20px\] {
+    @media (width >= 64rem) {
+      font-size: 20px;
+    }
+  }
+  .lg\:text-\[23px\] {
+    @media (width >= 64rem) {
+      font-size: 23px;
+    }
+  }
+  .lg\:text-\[25px\] {
+    @media (width >= 64rem) {
+      font-size: 25px;
+    }
+  }
+  .lg\:text-\[50px\] {
+    @media (width >= 64rem) {
+      font-size: 50px;
+    }
+  }
+  .lg\:text-\[53px\] {
+    @media (width >= 64rem) {
+      font-size: 53px;
     }
   }
 }
@@ -256,6 +380,10 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-outline-style {
   syntax: "*";
@@ -266,6 +394,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
     }
   }
